@@ -230,8 +230,7 @@ This project strictly follows the IT3040 ITPM Assignment 1 requirements:
 - ✅ Original test cases (no plagiarism)
 - ✅ Comprehensive coverage of all required areas
 
-**IT3040 ITPM Assignment 1** 
-IT23257054 | Kumarathunga R C S 
+**IT3040 ITPM Assignment 1**  
 BSc IT Year 3  Semester 2
 Option 1: Singlish to Sinhala Transliteration Testing
 
