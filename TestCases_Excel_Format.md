@@ -6,6 +6,13 @@ Copy the tables below and paste them into Excel. Each test case is formatted for
 
 ---
 
+## Table Headers Reference
+
+| TC ID | Test case name | Input length type | Input | Expected output | Actual output | Status | Accuracy justification / Description of issue type | What is covered by the test |
+|-------|-----------------|-------------------|-------|-----------------|----------------|--------|-----------------------------------------------------|---------------------------|
+
+---
+
 ## POSITIVE FUNCTIONAL TEST CASES
 
 | TC ID | Test Case Name | Input Length Type | Input (Singlish) | Expected Output (Sinhala) | Actual Output | Status | Accuracy Justification / Issue Description | What is covered by the test |
