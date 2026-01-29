@@ -6,9 +6,9 @@ This project contains automated test cases for the Singlish to Sinhala translite
 
 ### Test Coverage
 
-The automation framework includes **35 comprehensive test cases**:
+The automation framework includes **40 comprehensive test cases**:
 
-- **24 Positive Functional Tests** - Validating accurate transliteration across various scenarios
+- **29 Positive Functional Tests** - Validating accurate transliteration across various scenarios
 - **10 Negative Functional Tests** - Testing edge cases and system robustness
 - **1 UI Behavior Test** - Verifying real-time output functionality
 
@@ -18,23 +18,24 @@ The automation framework includes **35 comprehensive test cases**:
 - Simple, compound, and complex sentences
 - Interrogative and imperative forms
 - Past, present, and future tenses
+- Positive and negative sentence forms
 - Polite vs informal phrasing
-- Daily language usage scenarios
+- Daily language usage scenarios (greetings, requests, responses)
+- Word combinations (joined words, repeated words for emphasis)
 - Mixed Singlish with English (technical terms, brands, places)
-- Numbers, currency, dates, and time formats
-- Abbreviations (OTP, Email, Zoom, WhatsApp)
+- Currency, time formats, dates, and numeric formats
+- Multiple spaces, line breaks, and paragraph formatting
 - Slang and colloquial expressions
-- Joined words and repeated words for emphasis
+- Long inputs (≥300 characters)
 
 ### Negative Functional Tests Cover:
-- Empty input handling
-- Special characters and punctuation
-- Excessive whitespace
-- Unsupported scripts (Chinese, Arabic)
-- Extremely long input
-- Numbers and punctuation only
-- Line breaks and paragraph formatting
-- Mixed valid and invalid characters
+- Email and URL transliteration errors
+- Password handling issues
+- Phonetic errors (w/v confusion, vowel length)
+- Spacing and typo handling
+- English word breakdown errors
+- Slang and typo transliteration issues
+- Mixed language case handling
 
 ### UI Tests Cover:
 - Real-time transliteration behavior
@@ -87,21 +88,16 @@ npm test
 npm run test:headed
 ```
 
-### Run specific test suites
+### Run all tests (all 40 test cases)
 
-**Positive functional tests only:**
 ```bash
-npm run test:positive
+npm test
 ```
 
-**Negative functional tests only:**
-```bash
-npm run test:negative
-```
+or
 
-**UI behavior tests only:**
 ```bash
-npm run test:ui
+npm run test:all
 ```
 
 ### Run tests in debug mode
@@ -123,9 +119,7 @@ npm run test:report
 ```
 playwright-automation/
 ├── tests/
-│   ├── positiveFunctional.spec.ts    # 24 positive functional test cases
-│   ├── negativeFunctional.spec.ts    # 10 negative functional test cases
-│   └── uiBehavior.spec.ts            # 1 UI behavior test case
+│   └── negativeFunctional.spec.ts    # All 40 test cases (29 positive, 10 negative, 1 UI)
 ├── playwright.config.ts               # Playwright configuration
 ├── package.json                       # Project dependencies and scripts
 ├── tsconfig.json                      # TypeScript configuration
@@ -135,55 +129,60 @@ playwright-automation/
 
 ## 🧪 Test Case Details
 
-### Positive Functional Tests (24)
+### Positive Functional Tests (29)
 
 | Test ID | Description | Input Length |
 |---------|-------------|--------------|
-| Pos_Fun_0001 | Simple greeting translation | S |
-| Pos_Fun_0002 | Simple interrogative sentence | S |
-| Pos_Fun_0003 | Polite request with formal phrasing | M |
-| Pos_Fun_0004 | Informal casual conversation | S |
-| Pos_Fun_0005 | Compound sentence with conjunction | M |
-| Pos_Fun_0006 | Past tense sentence | M |
-| Pos_Fun_0007 | Future tense with intention | M |
-| Pos_Fun_0008 | Present continuous tense | S |
-| Pos_Fun_0009 | Imperative command form | S |
-| Pos_Fun_0010 | Negative sentence structure | M |
-| Pos_Fun_0011 | Pronouns - first person plural | M |
-| Pos_Fun_0012 | Mixed Singlish with English technical term | M |
-| Pos_Fun_0013 | Brand names preservation | M |
-| Pos_Fun_0014 | Abbreviations - OTP | S |
-| Pos_Fun_0015 | Email and Zoom references | M |
-| Pos_Fun_0016 | Numbers and currency | M |
-| Pos_Fun_0017 | Date format handling | M |
-| Pos_Fun_0018 | Time expression | S |
-| Pos_Fun_0019 | Place name - Colombo | M |
-| Pos_Fun_0020 | Colloquial slang expression | S |
-| Pos_Fun_0021 | Repeated words for emphasis | S |
-| Pos_Fun_0022 | Complex sentence with subordinate clause | L |
-| Pos_Fun_0023 | Joined words without spaces | S |
-| Pos_Fun_0024 | Long paragraph with multiple sentences | L |
+| Pos_Fun_0001 | Future Tense | M |
+| Pos_Fun_0002 | Compound Logic | M |
+| Pos_Fun_0003 | Advice/Imperative | M |
+| Pos_Fun_0004 | Mixed Question | M |
+| Pos_Fun_0005 | Command | S |
+| Pos_Fun_0006 | Routine | M |
+| Pos_Fun_0007 | Dislike | M |
+| Pos_Fun_0008 | Greeting | S |
+| Pos_Fun_0009 | Vehicle Request | M |
+| Pos_Fun_0010 | Conditional | M |
+| Pos_Fun_0011 | Apology | M |
+| Pos_Fun_0012 | Daily Act | M |
+| Pos_Fun_0013 | Joined Words | S |
+| Pos_Fun_0014 | Repetition | S |
+| Pos_Fun_0015 | Past Tense | M |
+| Pos_Fun_0016 | Present Tense | M |
+| Pos_Fun_0017 | Future Exam | M |
+| Pos_Fun_0018 | Negation State | M |
+| Pos_Fun_0019 | Plural Forms | M |
+| Pos_Fun_0020 | Loan Request | M |
+| Pos_Fun_0021 | Mixed Technical Terms | M |
+| Pos_Fun_0022 | Currency Format | M |
+| Pos_Fun_0023 | Time Format | S |
+| Pos_Fun_0024 | Date Format | M |
+| Pos_Fun_0025 | Multiple Spaces | M |
+| Pos_Fun_0026 | Line Breaks and Paragraph | M |
+| Pos_Fun_0027 | Very Long Input | L |
+| Pos_Fun_0028 | Scientific Terminology | M |
+| Pos_Fun_0029 | Slang Mixed Case | M |
 
 ### Negative Functional Tests (10)
 
 | Test ID | Description | Input Length |
 |---------|-------------|--------------|
-| Neg_Fun_0001 | Empty input handling | S |
-| Neg_Fun_0002 | Special characters only | S |
-| Neg_Fun_0003 | Excessive whitespace | M |
-| Neg_Fun_0004 | Unsupported script - Chinese characters | S |
-| Neg_Fun_0005 | Unsupported script - Arabic characters | S |
-| Neg_Fun_0006 | Extremely long input | L |
-| Neg_Fun_0007 | Only numbers input | S |
-| Neg_Fun_0008 | Only punctuation marks | S |
-| Neg_Fun_0009 | Multiple line breaks and paragraphs | M |
-| Neg_Fun_0010 | Mixed invalid characters with valid text | M |
+| Neg_Fun_0001 | Email Transliteration Error | M |
+| Neg_Fun_0002 | Password Handling Error | M |
+| Neg_Fun_0003 | URL Handling Error | M |
+| Neg_Fun_0004 | Phonetic w Issue | M |
+| Neg_Fun_0005 | Vowel Length (kama) | M |
+| Neg_Fun_0006 | Phonetic w/v Confusion | M |
+| Neg_Fun_0007 | Spacing/Typo Error | M |
+| Neg_Fun_0008 | English Word Breakdown | M |
+| Neg_Fun_0009 | Slang/Typo Handling | M |
+| Neg_Fun_0010 | Mixed Language Case | M |
 
 ### UI Behavior Test (1)
 
 | Test ID | Description | Input Length |
 |---------|-------------|--------------|
-| Pos_UI_0001 | Real-time output behavior | M |
+| Pos_UI_0001 | Real-time output update behavior | S |
 
 ## 🔍 Test Execution Notes
 
@@ -226,11 +225,21 @@ This project strictly follows the IT3040 ITPM Assignment 1 requirements:
 - ✅ Tests functional accuracy and UI behavior only (no backend/performance/security testing)
 - ✅ Uses Playwright with TypeScript
 - ✅ Follows Appendix 2 test case format
-- ✅ Includes 24 positive, 10 negative, and 1 UI test case
+- ✅ Includes 29 positive (exceeds minimum of 24), 10 negative, and 1 UI test case
 - ✅ Original test cases (no plagiarism)
-- ✅ Comprehensive coverage of all required areas
+- ✅ Comprehensive coverage of all required areas:
+  - ✅ Sentence structures (simple, compound, complex)
+  - ✅ Interrogative and imperative forms
+  - ✅ Positive and negative sentence forms
+  - ✅ Daily language usage (greetings, requests, responses)
+  - ✅ Word combinations and phrase patterns
+  - ✅ Grammatical forms (tenses, negation, plural, pronouns)
+  - ✅ Input length variation (S ≤30, M 31-299, L ≥300)
+  - ✅ Mixed language content (Singlish + English)
+  - ✅ Punctuation, currency, time formats, dates
+  - ✅ Multiple spaces, line breaks, paragraphs
+  - ✅ Informal language and slang
 
 **IT3040 ITPM Assignment 1**  
 BSc IT Year 3  Semester 2
 Option 1: Singlish to Sinhala Transliteration Testing
-
