@@ -41,11 +41,20 @@ export default defineConfig({
         actionTimeout: 10000,
     },
 
+    // Launch options to bypass Windows Smart App Control restrictions
+    webServer: undefined,
+    fullyParallel: true,
+
     // Configure projects for major browsers
     projects: [
         {
             name: 'chromium',
-            use: { ...devices['Desktop Chrome'] },
+            use: {
+                ...devices['Desktop Chrome'],
+                launchOptions: {
+                    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+                },
+            },
         }
     ],
 });
