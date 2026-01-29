@@ -22,7 +22,7 @@ test('Pos_UI_0001 - Real-time output update behavior', async ({ page }) => {
 });
 
 // ==========================================
-// 2. POSITIVE FUNCTIONAL TESTS (Pos_Fun_0001 - 0024)
+// 2. POSITIVE FUNCTIONAL TESTS (Pos_Fun_0001 - 0029)
 // ==========================================
 
 test('Pos_Fun_0001 - Future Tense', async ({ page }) => {
@@ -137,18 +137,56 @@ test('Pos_Fun_0021 - Mixed Technical Terms', async ({ page }) => {
   await expect(page.locator('div.bg-slate-50').first()).toContainText('LinkedIn');
 });
 
-test('Pos_Fun_0022 - Long Input', async ({ page }) => {
-  const longInput = 'Mama dhaen town Ekata aava eegamanma Bank Ekata yanava salli vageyak dhaanna...'; 
-  await page.getByPlaceholder('Input Your Singlish Text Here.').fill(longInput);
-  await expect(page.locator('div.bg-slate-50').first()).toBeVisible();
+test('Pos_Fun_0022 - Currency Format', async ({ page }) => {
+  await page.getByPlaceholder('Input Your Singlish Text Here.').fill('meka rupees 500 yi');
+  await expect(page.locator('div.bg-slate-50').first()).toContainText('500');
+  await expect(page.locator('div.bg-slate-50').first()).toContainText('රුපියල්');
 });
 
-test('Pos_Fun_0023 - Scientific Terminology', async ({ page }) => {
+test('Pos_Fun_0023 - Time Format', async ({ page }) => {
+  await page.getByPlaceholder('Input Your Singlish Text Here.').fill('pawa 3 ta enna');
+  await expect(page.locator('div.bg-slate-50').first()).toContainText('3');
+  await expect(page.locator('div.bg-slate-50').first()).toContainText('ට');
+});
+
+test('Pos_Fun_0024 - Date Format', async ({ page }) => {
+  await page.getByPlaceholder('Input Your Singlish Text Here.').fill('meeting eka January 30 weni da');
+  await expect(page.locator('div.bg-slate-50').first()).toContainText('January');
+  await expect(page.locator('div.bg-slate-50').first()).toContainText('30');
+});
+
+test('Pos_Fun_0025 - Multiple Spaces', async ({ page }) => {
+  await page.getByPlaceholder('Input Your Singlish Text Here.').fill('mama     gedara     yanavaa');
+  const output = page.locator('div.bg-slate-50').first();
+  await expect(output).toContainText('මම');
+  await expect(output).toContainText('ගෙදර');
+  await expect(output).toContainText('යනවා');
+});
+
+test('Pos_Fun_0026 - Line Breaks and Paragraph', async ({ page }) => {
+  const inputWithBreaks = 'mama gedara yanavaa\n\namma inne\n\nthaththa awe naha';
+  await page.getByPlaceholder('Input Your Singlish Text Here.').fill(inputWithBreaks);
+  const output = page.locator('div.bg-slate-50').first();
+  await expect(output).toContainText('මම');
+  await expect(output).toContainText('ගෙදර');
+  await expect(output).toContainText('අම්ම');
+});
+
+test('Pos_Fun_0027 - Very Long Input', async ({ page }) => {
+  // Creating input ≥300 characters as required by assignment
+  const veryLongInput = 'Mama dhaen town Ekata aava eegamanma Bank Ekata yanava salli vageyak dhaanna. Mama dhaen town Ekata aava eegamanma Bank Ekata yanava salli vageyak dhaanna. Mama dhaen town Ekata aava eegamanma Bank Ekata yanava salli vageyak dhaanna. Mama dhaen town Ekata aava eegamanma Bank Ekata yanava salli vageyak dhaanna. Mama dhaen town Ekata aava eegamanma Bank Ekata yanava salli vageyak dhaanna. Mama dhaen town Ekata aava eegamanma Bank Ekata yanava salli vageyak dhaanna.';
+  await page.getByPlaceholder('Input Your Singlish Text Here.').fill(veryLongInput);
+  await expect(page.locator('div.bg-slate-50').first()).toBeVisible();
+  const output = page.locator('div.bg-slate-50').first();
+  await expect(output).toContainText('මම');
+});
+
+test('Pos_Fun_0028 - Scientific Terminology', async ({ page }) => {
   await page.getByPlaceholder('Input Your Singlish Text Here.').fill('maanava moLaya saha kRUthrima budhDhiya (Artificial Intelligence)');
   await expect(page.locator('div.bg-slate-50').first()).toContainText('කෘත්‍රිම බුද්ධිය');
 });
 
-test('Pos_Fun_0024 - Slang Mixed Case', async ({ page }) => {
+test('Pos_Fun_0029 - Slang Mixed Case', async ({ page }) => {
   await page.getByPlaceholder('Input Your Singlish Text Here.').fill('appatasiri, mata ASSIGMENT eka submit karanna amathak unaane.');
   await expect(page.locator('div.bg-slate-50').first()).toContainText('අප්පටසිරි');
 });
