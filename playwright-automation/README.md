@@ -87,21 +87,16 @@ npm test
 npm run test:headed
 ```
 
-### Run specific test suites
+### Run all tests (all 35 test cases)
 
-**Positive functional tests only:**
 ```bash
-npm run test:positive
+npm run test:all
 ```
 
-**Negative functional tests only:**
-```bash
-npm run test:negative
-```
+or simply:
 
-**UI behavior tests only:**
 ```bash
-npm run test:ui
+npm test
 ```
 
 ### Run tests in debug mode
@@ -123,9 +118,7 @@ npm run test:report
 ```
 playwright-automation/
 ├── tests/
-│   ├── positiveFunctional.spec.ts    # 24 positive functional test cases
-│   ├── negativeFunctional.spec.ts    # 10 negative functional test cases
-│   └── uiBehavior.spec.ts            # 1 UI behavior test case
+│   └── negativeFunctional.spec.ts    # All 35 test cases (24 positive, 10 negative, 1 UI)
 ├── playwright.config.ts               # Playwright configuration
 ├── package.json                       # Project dependencies and scripts
 ├── tsconfig.json                      # TypeScript configuration

@@ -9,7 +9,15 @@ Copy the tables below and paste them into Excel. Each test case is formatted for
 ## Table Headers Reference
 
 | TC ID | Test case name | Input length type | Input | Expected output | Actual output | Status | Accuracy justification / Description of issue type | What is covered by the test |
-|-------|-----------------|-------------------|-------|-----------------|----------------|--------|-----------------------------------------------------|---------------------------|
+|-------|----------------|-------------------|-------|-----------------|--------------|--------|-----------------------------------------------------|---------------------------|
+
+---
+
+## POSITIVE UI TEST CASE
+
+| TC ID | Test Case Name | Input Length Type | Input (Singlish) | Expected Output (Sinhala) | Actual Output | Status | Accuracy Justification / Issue Description | What is covered by the test |
+|-------|----------------|-------------------|------------------|---------------------------|---------------|--------|-------------------------------------------|----------------------------|
+| Pos_UI_0001 | Real-time output update behavior | S | beheth bonna | බෙහෙත් බොන්න | | | Validates that output updates automatically in real-time while typing without requiring button click | Daily language usage / Simple sentence / S (≤30 characters) / Real-time output update behavior |
 
 ---
 
@@ -17,30 +25,30 @@ Copy the tables below and paste them into Excel. Each test case is formatted for
 
 | TC ID | Test Case Name | Input Length Type | Input (Singlish) | Expected Output (Sinhala) | Actual Output | Status | Accuracy Justification / Issue Description | What is covered by the test |
 |-------|----------------|-------------------|------------------|---------------------------|---------------|--------|-------------------------------------------|----------------------------|
-| Pos_Fun_0001 | Simple greeting translation | S | ayubowan | ආයුබෝවන් | | | Validates basic greeting word transliteration accuracy | Daily Language Usage / Greetings / S / Accuracy |
-| Pos_Fun_0002 | Simple interrogative sentence | S | kohomada | කොහොමද | | | Tests interrogative form with common greeting question | Daily Language Usage / Interrogative Form / S / Accuracy |
-| Pos_Fun_0003 | Polite request with formal phrasing | M | karunakara mama ekka enna puluwan da | කරුණාකර මම එක්ක එන්න පුළුවන් ද | | | Validates polite request format with formal language | Daily Language Usage / Polite Phrasing / M / Accuracy |
-| Pos_Fun_0004 | Informal casual conversation | S | mokada karanne | මොකද කරන්නේ | | | Tests informal conversational phrase accuracy | Daily Language Usage / Informal Phrasing / S / Accuracy |
-| Pos_Fun_0005 | Compound sentence with conjunction | M | mama gedara giya hari amma inne naha | මම ගෙදර ගියා හරි අම්ම ඉන්නේ නැහැ | | | Validates compound sentence structure with conjunction | Daily Language Usage / Compound Sentence / M / Accuracy |
-| Pos_Fun_0006 | Past tense sentence | M | mama iye iskole giya | මම ඊයේ ඉස්කෝලේ ගියා | | | Tests past tense verb conjugation accuracy | Daily Language Usage / Past Tense / M / Accuracy |
-| Pos_Fun_0007 | Future tense with intention | M | mama heta gedara yanawa | මම හෙට ගෙදර යනවා | | | Validates future tense expression | Daily Language Usage / Future Tense / M / Accuracy |
-| Pos_Fun_0008 | Present continuous tense | S | mama kana kanawa | මම කන කනවා | | | Tests present continuous tense accuracy | Daily Language Usage / Present Tense / S / Accuracy |
-| Pos_Fun_0009 | Imperative command form | S | meka karanna | මේක කරන්න | | | Validates imperative command structure | Daily Language Usage / Imperative Form / S / Accuracy |
-| Pos_Fun_0010 | Negative sentence structure | M | mama eka karanna baha | මම එක කරන්න බැහැ | | | Tests negative sentence formation | Daily Language Usage / Negative Sentence / M / Accuracy |
-| Pos_Fun_0011 | Pronouns - first person plural | M | api heta party ekata yanawa | අපි හෙට party එකට යනවා | | | Validates plural pronoun usage with mixed English | Daily Language Usage / Plural Forms / M / Accuracy |
-| Pos_Fun_0012 | Mixed Singlish with English technical term | M | mama laptop eka repair karanna one | මම laptop එක repair කරන්න ඕනේ | | | Tests handling of English technical terms within Singlish | Mixed Singlish + English / Technical Terms / M / Accuracy |
-| Pos_Fun_0013 | Brand names preservation | M | mama WhatsApp ekak damma | මම WhatsApp එකක් දැම්ම | | | Validates brand name preservation in transliteration | Mixed Singlish + English / Brand Names / M / Accuracy |
-| Pos_Fun_0014 | Abbreviations - OTP | S | OTP eka awa da | OTP එක ආවා ද | | | Tests abbreviation handling (OTP) | Mixed Singlish + English / Abbreviations / S / Accuracy |
-| Pos_Fun_0015 | Email and Zoom references | M | mama email ekak dala Zoom meeting ekata join wenna | මම email එකක් දාලා Zoom meeting එකට join වෙන්න | | | Validates multiple technical abbreviations in one sentence | Mixed Singlish + English / Abbreviations / M / Accuracy |
-| Pos_Fun_0016 | Numbers and currency | M | meka rupees 500 yi | මේක rupees 500 යි | | | Tests number and currency handling | Numbers & Formats / Currency / M / Accuracy |
-| Pos_Fun_0017 | Date format handling | M | meeting eka January 30 weni da | meeting එක January 30 වෙනි ද | | | Validates date format preservation | Numbers & Formats / Date Format / M / Accuracy |
-| Pos_Fun_0018 | Time expression | S | pawa 3 ta enna | පව 3 ට එන්න | | | Tests time format handling | Numbers & Formats / Time Format / S / Accuracy |
-| Pos_Fun_0019 | Place name - Colombo | M | mama Colombo ekata yanawa | මම Colombo එකට යනවා | | | Validates place name preservation | Mixed Singlish + English / Place Names / M / Accuracy |
-| Pos_Fun_0020 | Colloquial slang expression | S | eka machan super | එක මචන් super | | | Tests colloquial slang word (machan) transliteration | Slang & Colloquial / Informal Language / S / Accuracy |
-| Pos_Fun_0021 | Repeated words for emphasis | S | loku loku gedara | ලොකු ලොකු ගෙදර | | | Validates repeated word handling for emphasis | Daily Language Usage / Repeated Words / S / Accuracy |
-| Pos_Fun_0022 | Complex sentence with subordinate clause | L | mama gedara giya wela amma kiwwa oya awe naha kiyala | මම ගෙදර ගිය වෙලා අම්ම කිව්ව ඔය ආවේ නැහැ කියලා | | | Tests complex sentence with subordinate clause structure | Daily Language Usage / Complex Sentence / L / Accuracy |
-| Pos_Fun_0023 | Joined words without spaces | S | mamagedara | මමගෙදර | | | Validates joined word transliteration accuracy | Daily Language Usage / Joined Words / S / Accuracy |
-| Pos_Fun_0024 | Long paragraph with multiple sentences | L | mama adha iskole giya. amma lunch ekak dunna. mama eka kala. ekata passe mama homework karanna gaththa. | මම අද ඉස්කෝලේ ගියා. අම්ම lunch එකක් දුන්න. මම එක කෑල. එකට පස්සේ මම homework කරන්න ගත්ත. | | | Tests long input with multiple sentences and paragraph structure | Daily Language Usage / Simple Sentence / L / Accuracy |
+| Pos_Fun_0001 | Future Tense | M | heta api nuvara yanavaa | හෙට අපි නුවර යනවා | | | Validates future tense expression with correct verb conjugation | Daily language usage / Future tense / M (31-299 characters) / Accuracy validation |
+| Pos_Fun_0002 | Compound Logic | M | mama baeQQkuvata yanavaa iitapasse salli dhaanavaa | මම බැංකුවට යනවා ඊටපස්සෙ සල්ලි දානවා | | | Tests compound sentence structure with sequential actions | Daily language usage / Compound sentence / M (31-299 characters) / Accuracy validation |
+| Pos_Fun_0003 | Advice/Imperative | M | asaniipa unath viBhaagaya liyanna yanna epaeyi | අසනීප උනත් විභාගය ලියන්න යන්න එපැයි | | | Validates imperative/advice form with conditional logic | Daily language usage / Imperative (command) / M (31-299 characters) / Accuracy validation |
+| Pos_Fun_0004 | Mixed Question | M | Adha api film ekak balanna yamudha? | අද අපි film එකක් බලන්න යමුද? | | | Tests interrogative form with mixed Singlish and English technical term | Mixed Singlish + English / Interrogative (question) / M (31-299 characters) / Accuracy validation |
+| Pos_Fun_0005 | Command | S | beheth bonna | බෙහෙත් බොන්න | | | Validates imperative command structure | Daily language usage / Imperative (command) / S (≤30 characters) / Accuracy validation |
+| Pos_Fun_0006 | Routine | M | mama skole yanavaa | මම ස්කොලෙ යනවා | | | Tests present tense routine activity with English loanword | Daily language usage / Present tense / M (31-299 characters) / Accuracy validation |
+| Pos_Fun_0007 | Dislike | M | mama eyaata kaemathi naehae. | මම එයාට කැමති නැහැ | | | Validates negative sentence expressing dislike | Daily language usage / Negation (negative form) / M (31-299 characters) / Accuracy validation |
+| Pos_Fun_0008 | Greeting | S | suba upandhinaya | සුබ උපන්දිනය | | | Tests greeting phrase transliteration accuracy | Greeting / request / response / Simple sentence / S (≤30 characters) / Accuracy validation |
+| Pos_Fun_0009 | Vehicle Request | M | mata oyaage vaahanaya tikakata dhenna puluvandha | මට ඔයාගෙ වාහනය ටිකකට දෙන්න පුලුවන්ද | | | Validates polite request form with vehicle reference | Greeting / request / response / Interrogative (question) / M (31-299 characters) / Accuracy validation |
+| Pos_Fun_0010 | Conditional | M | ehenam mama eeka dhennam | එහෙනම් මම ඒක දෙන්නම් | | | Tests conditional sentence structure | Daily language usage / Complex sentence / M (31-299 characters) / Accuracy validation |
+| Pos_Fun_0011 | Apology | M | samaavenna, mata eeka karanna baeri unaa | සමාවෙන්න, මට ඒක කරන්න බැරි උනා | | | Validates apology expression with explanation | Greeting / request / response / Simple sentence / M (31-299 characters) / Accuracy validation |
+| Pos_Fun_0012 | Daily Act | M | api adha pansal yanavaa | අපි අද පන්සල් යනවා | | | Tests daily routine activity expression | Daily language usage / Present tense / M (31-299 characters) / Accuracy validation |
+| Pos_Fun_0013 | Joined Words | S | Apiaevidhinnayanavaa | අපි ඇවිදින්න යනවා | | | Validates transliteration of joined words without spaces | Word combination / phrase pattern / Joined vs segmented word variations / S (≤30 characters) / Accuracy validation |
+| Pos_Fun_0014 | Repetition | S | goda goda | ගොඩ ගොඩ | | | Tests repeated word expression for emphasis | Word combination / phrase pattern / Repeated word expressions / S (≤30 characters) / Accuracy validation |
+| Pos_Fun_0015 | Past Tense | M | mama iiye paadam karaa | මම ඊයෙ පාඩම් කරා | | | Validates past tense verb conjugation | Daily language usage / Past tense / M (31-299 characters) / Accuracy validation |
+| Pos_Fun_0016 | Present Tense | M | api dhaen dhuvanavaa | අපි දැන් දුවනවා | | | Tests present tense continuous action | Daily language usage / Present tense / M (31-299 characters) / Accuracy validation |
+| Pos_Fun_0017 | Future Exam | M | mama heta viBhaagaya liyanavaa | මම හෙට විභාගය ලියනවා | | | Validates future tense with exam context | Daily language usage / Future tense / M (31-299 characters) / Accuracy validation |
+| Pos_Fun_0018 | Negation State | M | mata nidhimatha naee. | මට නිදිමත නෑ. | | | Tests negative form expressing state | Daily language usage / Negation (negative form) / M (31-299 characters) / Accuracy validation |
+| Pos_Fun_0019 | Plural Forms | M | oyaala bath kanna | ඔයාල බත් කන්න | | | Validates plural pronoun and verb forms | Daily language usage / Plural form / M (31-299 characters) / Accuracy validation |
+| Pos_Fun_0020 | Loan Request | M | karuNaakara mata Nayak dhenna puluvandha | කරුණාකර මට ණයක් දෙන්න පුලුවන්ද | | | Tests polite request form for loan | Greeting / request / response / Interrogative (question) / M (31-299 characters) / Accuracy validation |
+| Pos_Fun_0021 | Mixed Technical Terms | M | magee LinkedIn ekee WiFi password eka update karanna | මගේ LinkedIn එකේ WiFi password එක update කරන්න | | | Validates handling of multiple English technical terms | Mixed Singlish + English / English technical/brand terms / M (31-299 characters) / Accuracy validation |
+| Pos_Fun_0022 | Long Input | M | Mama dhaen town Ekata aava eegamanma Bank Ekata yanava salli vageyak dhaanna... | [Long transliterated output] | | | Tests system robustness with longer input text | Daily language usage / Simple sentence / M (31-299 characters) / Robustness validation |
+| Pos_Fun_0023 | Scientific Terminology | M | maanava moLaya saha kRUthrima budhDhiya (Artificial Intelligence) | මානව මොළය සහ කෘත්‍රිම බුද්ධිය (Artificial Intelligence) | | | Validates scientific terminology with English translation | Mixed Singlish + English / English technical/brand terms / M (31-299 characters) / Accuracy validation |
+| Pos_Fun_0024 | Slang Mixed Case | M | appatasiri, mata ASSIGMENT eka submit karanna amathak unaane. | අප්පටසිරි, මට ASSIGMENT එක submit කරන්න අමතක උනානේ. | | | Tests slang expression with mixed case English word | Slang / informal language / Slang and colloquial phrasing / M (31-299 characters) / Robustness validation |
 
 ---
 
@@ -48,24 +56,16 @@ Copy the tables below and paste them into Excel. Each test case is formatted for
 
 | TC ID | Test Case Name | Input Length Type | Input (Singlish) | Expected Output (Sinhala) | Actual Output | Status | Accuracy Justification / Issue Description | What is covered by the test |
 |-------|----------------|-------------------|------------------|---------------------------|---------------|--------|-------------------------------------------|----------------------------|
-| Neg_Fun_0001 | Empty input handling | S | [Empty string] | [Empty or appropriate message] | | | Validates system behavior with no input | Edge Cases / Empty Input / S / Robustness |
-| Neg_Fun_0002 | Special characters only | S | @#$%^&*() | @#$%^&*() [unchanged or handled gracefully] | | | Tests special character handling | Edge Cases / Special Characters / S / Robustness |
-| Neg_Fun_0003 | Excessive whitespace | M | mama     gedara     yanawa | මම     ගෙදර     යනවා [preserves or normalizes spaces] | | | Validates whitespace handling | Edge Cases / Whitespace Handling / M / Robustness |
-| Neg_Fun_0004 | Unsupported script - Chinese characters | S | 你好世界 | 你好世界 [unchanged or error message] | | | Tests handling of non-Latin, non-Sinhala scripts | Edge Cases / Unsupported Script / S / Robustness |
-| Neg_Fun_0005 | Unsupported script - Arabic characters | S | مرحبا | مرحبا [unchanged or error message] | | | Tests Arabic script handling | Edge Cases / Unsupported Script / S / Robustness |
-| Neg_Fun_0006 | Extremely long input | L | mama gedara yanawa mama gedara yanawa mama gedara yanawa mama gedara yanawa mama gedara yanawa mama gedara yanawa mama gedara yanawa mama gedara yanawa mama gedara yanawa mama gedara yanawa mama gedara yanawa mama gedara yanawa mama gedara yanawa mama gedara yanawa mama gedara yanawa | [Handles gracefully or shows appropriate limit] | | | Tests system behavior with extremely long input | Edge Cases / Long Input / L / Robustness |
-| Neg_Fun_0007 | Only numbers input | S | 123456789 | 123456789 [unchanged] | | | Validates numeric-only input handling | Edge Cases / Numbers Only / S / Robustness |
-| Neg_Fun_0008 | Only punctuation marks | S | .,!?;: | .,!?;: [unchanged] | | | Tests punctuation-only input | Edge Cases / Punctuation Only / S / Robustness |
-| Neg_Fun_0009 | Multiple line breaks and paragraphs | M | mama gedara yanawa<br><br>amma inne<br><br>thaththa awe naha | [Preserves line breaks or formats appropriately] | | | Validates line break and paragraph handling | Edge Cases / Line Breaks / M / Formatting |
-| Neg_Fun_0010 | Mixed invalid characters with valid text | M | mama ♠♣♥♦ gedara yanawa | මම ♠♣♥♦ ගෙදර යනවා [handles symbols appropriately] | | | Tests mixed valid and invalid character handling | Edge Cases / Mixed Characters / M / Robustness |
-
----
-
-## UI TEST CASE
-
-| TC ID | Test Case Name | Input Length Type | Input (Singlish) | Expected Output (Sinhala) | Actual Output | Status | Accuracy Justification / Issue Description | What is covered by the test |
-|-------|----------------|-------------------|------------------|---------------------------|---------------|--------|-------------------------------------------|----------------------------|
-| Pos_UI_0001 | Real-time output behavior | M | mama gedara yanawa | මම ගෙදර යනවා [appears in real-time as user types] | | | Validates that output appears in real-time without requiring button click | Daily Language Usage / Simple Sentence / M / UI |
+| Neg_Fun_0001 | Email Transliteration Error | M | Oyaage email eka saman123@gmail.com needha | ඔයාගෙ email එක saman123@gmail.com නේද | | | Expected to FAIL: System incorrectly transliterates email username part instead of preserving it | Mixed Singlish + English / Names / places / common English words / M (31-299 characters) / Robustness validation |
+| Neg_Fun_0002 | Password Handling Error | M | Oyaage phone ekee password eka "sadaruwan345" | ඔයාගෙ phone එකේ password එක "sadaruwan345" | | | Expected to FAIL: System transliterates password strings that should remain unchanged | Mixed Singlish + English / Names / places / common English words / M (31-299 characters) / Robustness validation |
+| Neg_Fun_0003 | URL Handling Error | M | oyaata https://www.youtube.com/ me URL eka click karala youtube ekata yanna puluwan. | ඔයාට https://www.youtube.com/ මේ URL එක click කරලා youtube එකට යන්න පුළුවන්. | | | Expected to FAIL: System transliterates URL protocol (https) instead of preserving it | Mixed Singlish + English / Names / places / common English words / M (31-299 characters) / Robustness validation |
+| Neg_Fun_0004 | Phonetic w Issue | M | api pettaneyata yanawa sellam karanna. | අපි පිට්ටනියට යනවා සෙල්ලම් කරන්න. | | | Expected to FAIL: System produces incorrect character for "w" phonetics in "yanawa" | Daily language usage / Simple sentence / M (31-299 characters) / Robustness validation |
+| Neg_Fun_0005 | Vowel Length (kama) | M | mama kama ekak genawa api eka kamu | මම කෑම එකක් ගෙනාවා අපි එක කමු | | | Expected to FAIL: Incorrect vowel length changes meaning from "food" (කෑම) to "work" (කම) | Daily language usage / Simple sentence / M (31-299 characters) / Robustness validation |
+| Neg_Fun_0006 | Phonetic w/v Confusion | M | ikmanata oka iwara karala pantiyata enna | ඉක්මනට ඕක ඉවර කරලා පන්තියට එන්න | | | Expected to FAIL: System confuses 'w' and 'v' phonetics in "iwara" | Daily language usage / Simple sentence / M (31-299 characters) / Robustness validation |
+| Neg_Fun_0007 | Spacing/Typo Error | M | eka harim kethei | ඒක හරිම කැතයි | | | Expected to FAIL: System fails to correct spacing in common Singlish slang "harim" (should be "hari im") | Slang / informal language / Slang and colloquial phrasing / M (31-299 characters) / Robustness validation |
+| Neg_Fun_0008 | English Word Breakdown | M | mama polece ynw | මම police යනවා | | | Expected to FAIL: System transliterates English loanword "police" instead of preserving it | Mixed Singlish + English / English technical/brand terms / M (31-299 characters) / Robustness validation |
+| Neg_Fun_0009 | Slang/Typo Handling | M | harima pandethai oya | හරිම පණ්ඩිතයි ඔයා | | | Expected to FAIL: Incorrect transliteration of retroflex consonants in slang "pandethai" | Slang / informal language / Slang and colloquial phrasing / M (31-299 characters) / Robustness validation |
+| Neg_Fun_0010 | Mixed Language Case | M | apal juice ekK bomud | ඇපල් juice එකක් බොමුද | | | Expected to FAIL: System struggles with mixed case and typo "ekK" in mixed language context | Mixed Singlish + English / Slang and colloquial phrasing / M (31-299 characters) / Robustness validation |
 
 ---
 
@@ -76,3 +76,8 @@ Copy the tables below and paste them into Excel. Each test case is formatted for
 3. For **Accuracy Justification**, explain why it passed or describe the issue if it failed
 4. This format is ready to be copied directly into Excel
 5. Make sure to use a Unicode-compatible font in Excel to display Sinhala characters correctly (e.g., Nirmala UI, Iskoola Pota)
+6. **Input Length Types:**
+   - S = ≤30 characters
+   - M = 31-299 characters
+   - L = ≥300 characters
+7. **What is covered by the test** format: [Input Type/Domain] / [Sentence/Grammar Focus] / [Input Length Type] / [Quality Focus]

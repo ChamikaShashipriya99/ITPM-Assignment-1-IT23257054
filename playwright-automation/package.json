@@ -6,9 +6,7 @@
   "scripts": {
     "test": "npx playwright test",
     "test:headed": "npx playwright test --headed",
-    "test:positive": "npx playwright test tests/positiveFunctional.spec.ts",
-    "test:negative": "npx playwright test tests/negativeFunctional.spec.ts",
-    "test:ui": "npx playwright test tests/uiBehavior.spec.ts",
+    "test:all": "npx playwright test tests/negativeFunctional.spec.ts",
     "test:report": "npx playwright show-report",
     "test:debug": "npx playwright test --debug"
   },
