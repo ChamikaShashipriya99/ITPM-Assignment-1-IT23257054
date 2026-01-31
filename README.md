@@ -57,7 +57,7 @@ Follow these steps to set up the project:
 ### 1. Navigate to the project directory
 
 ```bash
-cd "d:/SLIIT/Y3S2/Assinment 1/playwright-automation"
+cd "d:/SLIIT/Y3S2/Assinment 1/IT23257054"
 ```
 
 ### 2. Install dependencies
